@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Common;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace AccountService.Controllers
     {
         [Route("login/{userName}/{password}")]
         [HttpGet]
-        public string login(string userName, string password)
+        public Response login(string userName, string password)
         {
             return new Logic.Login().login(userName, password);
         }

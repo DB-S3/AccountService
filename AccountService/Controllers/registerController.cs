@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Common;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,9 @@ namespace AccountService.Controllers
         // GET: api/<ValuesController>
         [Route("register/{userName}/{password}/{mail}")]
         [HttpGet]
-        public string Register(string userName, string password, string mail)
+        public Response Register(string userName, string password, string mail)
         {
-            new Logic.Register().CreateAccount(userName, password, mail, DateTime.Now);
-            return "succes";
+            return new Logic.Register().CreateAccount(userName, password, mail, DateTime.Now);
         }
     }
 }

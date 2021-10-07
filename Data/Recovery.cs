@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Common.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace Data
 {
-    public class Recovery
+    public class Recovery : IRecovery
     {
         public void CreateRecovery(string AccountId, string recoveryId, DateTime requestDate) {
             using (Database db = new Database())
